@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1 id="bonus"></h1>
+    <form>
+        <input type="number" id="year" placeholder="How long are you working?">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+const yearInput = document.getElementById("year");
+const form = document.querySelector("form");
+const bonusDisplay = document.getElementById("bonus");
+
+        form.addEventListener("submit", myFunction);
+        function myFunction(event) {
+            event.preventDefault();
+            const bonus = 50;
+            const year = document.getElementById("year").value;
+    
+            if (year >= 10 && year < 20) {
+                bonusDisplay.textContent = (bonus + 50 + ",00 Eur");
+            }
+            else if (year >= 20) {
+                bonusDisplay.textContent = (bonus + 100 +50 + ",00 Eur");
+            }
+            else {
+                bonusDisplay.textContent = (bonus + ",00 Eur");
+            }
+        }
+
+    </script>
+</body>

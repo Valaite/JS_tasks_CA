@@ -1,0 +1,23 @@
+<body>
+    <form>
+      <input type="text" id="fullname" placeholder="Full Name" />
+      <button type="submit">Find Name, Surname</button>
+    </form>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullname").value.trim();
+
+        const name = document.createElement("h1");
+        name.textContent = fullName.split(" ")[0];
+
+        const surname = document.createElement("h1");
+        // Vardą+Pavardę paėmus, pakeičiame vardą - tarpeliu (ir nutriname vieną tarpelį). Paliekame visą kitą.
+        surname.textContent = fullName.replace(name, "").slice(1);
+
+        document.body.append(name, surname);
+      });
+    </script>
+  </body>

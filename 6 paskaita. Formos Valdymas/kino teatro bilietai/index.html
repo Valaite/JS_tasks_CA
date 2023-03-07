@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1 id="price"></h1>
+    <form>
+        <input type="number" name="age" id="age" placeholder="Age">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+
+const ageInput = document.getElementById("age");
+const form = document.querySelector("form");
+const priceDisplay = document.getElementById("price");
+
+        document.querySelector("form"); addEventListener("submit", myFunction);
+        function myFunction(event) {
+            event.preventDefault();
+            const price = 6;
+            const age = document.querySelector("input[name=age]").value;
+            if (age < 16) {
+                document.querySelector("h1").textContent = (0.5*price + ",00 Eur");
+            }
+            else if (age >= 60) {
+                document.querySelector("h1").textContent = (price/3*2 + ",00 Eur");
+            }
+            else {
+                document.querySelector("h1").textContent = price + ",00 Eur";
+            }
+        }
+
+    </script>
+</body>

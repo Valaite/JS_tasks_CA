@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="minutes">
+    </form>
+    <h1 id="seconds"></h1>
+
+    <script>
+
+        function myFunction(event){
+            event.preventDefault();
+            const minutes = document.getElementById("minutes").value;
+        const result = (minutes * 60);
+      
+        document.querySelector("h1").textContent = (result + " seconds");}
+
+        document.getElementById('minutes').addEventListener('input', myFunction)
+
+    </script>
+</body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="number1">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        let counter = 0;
+        let randomNumber = Math.floor(Math.random() * 5) + 1;
+        console.log(randomNumber);
+
+        function myFunction(event) {
+            event.preventDefault();
+            counter++;
+            const numberImput = document.getElementById("number1").value;
+
+            if (randomNumber == numberImput) {
+                alert(`Atspėjai iš ${counter} karto`);
+            }
+             else {
+                alert("Neatspėjai");
+            }
+        }
+        
+        document.querySelector('form').addEventListener('submit', myFunction);
+
+    </script>
+
+</html>

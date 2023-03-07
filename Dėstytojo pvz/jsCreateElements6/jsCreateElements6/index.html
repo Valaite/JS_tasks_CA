@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="child" class="child"></div>
+    <button onclick="myFunc()">Add</button>
+  </body>
+  <script>
+    let height = 20;
+    let width = 20;
+
+    // const element = document.createElement("div");
+    // element.setAttribute("class", "child");
+    function myFunc() {
+      // document.body.prepend(element);
+
+      const element = document.createElement("div");
+      element.classList.add("child");
+      element.style.width = width + "px";
+      element.style.height = `${height}px`;
+      height = height + 20;
+      width = width + 20;
+
+      document.body.append(element);
+    }
+  </script>
+</html>

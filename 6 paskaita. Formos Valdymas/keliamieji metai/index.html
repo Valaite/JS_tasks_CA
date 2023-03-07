@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+    <form>
+        <input type="number" id="year">
+        <button type="submit">Submit</button>
+    </form>
+    <h1 id="result"></h1>
+    <script>
+
+const form = document.querySelector("form");
+const resultDisplay = document.getElementById("result");
+
+function isLeapYear(year) {
+  return ((year % 4 === 0) && (year % 100 != 0)) || (year % 400 == 0);
+}
+
+        form.addEventListener("submit", myFunction);
+        function myFunction(event) {
+            event.preventDefault();
+            const year = document.getElementById("year").value;
+    
+            if (isLeapYear(year)) {
+                resultDisplay.textContent = ("keliamieji");
+            }
+
+            else {
+                resultDisplay.textContent = ("nekeliami");
+            }
+        }
+
+    </script>
+</body>

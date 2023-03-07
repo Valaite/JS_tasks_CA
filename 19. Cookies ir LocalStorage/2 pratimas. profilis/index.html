@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc</title>
+</head>
+
+<body>
+
+    <script>
+const profile = {
+  firstName: 'John',
+  lastName: 'Snow',
+  picture: 'https://tele1.com.tr/wp-content/uploads/2019/05/john-snow.jpg',
+  description: 'Jon Snow is a fictional character in the A Song of Ice and Fire series of fantasy novels by American author George R. R. Martin, and its television adaptation Game of Thrones, in which he is portrayed by English actor Kit Harington. In the novels, he is a prominent point of view character.'
+}
+localStorage.setItem('profile', JSON.stringify(profile));
+
+const fn = (profile) => {
+  const img = document.createElement('img');
+  img.width = '200';
+  img.src = profile.picture;
+
+  const name = document.createElement('h4');
+  name.innerText = `${profile.firstName} ${profile.firstName}`;
+
+  const description = document.createElement('h5');
+  description.innerText = profile.description;
+
+  const card = document.createElement('div');
+  card.append(img, name, description);
+  document.body.append(card);
+};
+
+const getInfo = JSON.parse(localStorage.getItem('profile'));
+fn(getInfo);
+    </script>
+</body>
+
+</html>
+

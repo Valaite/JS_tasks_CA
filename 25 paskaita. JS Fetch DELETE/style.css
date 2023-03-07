@@ -1,0 +1,17 @@
+#productList {
+    display: flex;
+    margin: 20px;
+}
+
+.product-card {
+    border: rgb(24, 23, 23) solid 1px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.price {
+    color: red;
+
+}

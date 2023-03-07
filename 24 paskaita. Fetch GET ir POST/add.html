@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Property Form</title>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Add your property for sale</h1>
+            <p>Yes, you can sell where you live and get cash!</p>
+        </div>
+    </header>
+    <main>
+        <div class="addPropertyButton">
+            <h3>Add Property</h3>
+        </div>
+        <form>
+            <label for="img">Img</label>
+            <br>
+            <input type="text" name="img" id="img" placeholder="https://google.com/logo.png">
+            <br>
+            <label for="price">Price, Eur</label>
+            <br>
+            <input type="number" name="price" id="price" placeholder="50000">
+            <br>
+            <label for="description">Description</label>
+            <br>
+            <input name="description" id="description" type="text"></input>
+            <br>
+            <label for="city">City</label>
+            <br>
+            <select name="city" id="city">
+                <option value="vilnius">Vilnius</option>
+                <option value="kaunas">Kaunas</option>
+                <option value="klaipeda">Klaipėda</option>
+            </select>
+            <br>
+            <button type="submit" id="add">Add property</button>
+        </form>
+    </main>
+    <script src="./add.js"></script>
+</body>
+
+</html>

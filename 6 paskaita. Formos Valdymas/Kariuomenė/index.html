@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <form>
+        <input type="number" id="age" placeholder="Age">
+        <input type="radio" id="criminalRecord">
+        <label for="radio">Criminal Record</label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1 id="verdict"></h1>
+
+    <script>
+        const ageInput = document.getElementById("age");
+        const radiobutton = document.querySelector("input[type=radio]");
+        const form = document.querySelector("form");
+        const result = document.getElementById("verdict");
+
+        document.querySelector("form"); addEventListener("submit", myFunction);
+
+        function myFunction(event) {
+            event.preventDefault();
+            const age = Number(ageInput.value);
+            const record = radiobutton.checked;
+
+            if (age >= 18 && age <= 30 && !record) {
+                result.textContent = ("Kariuomenė");
+            }
+
+            else {
+                result.textContent = "netinkamas kariuomenei";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

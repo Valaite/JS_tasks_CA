@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Contacts</h1>
+      <h2>We will be happy to answer any your question.</h2>
+      <div class="inputs">
+        <input
+          onchange="textFill()"
+          id="name"
+          type="text"
+          placeholder="Your name"
+          value="asdasdasd"
+        />
+        <input id="email" type="text" placeholder="Your email" />
+        <input id="company" type="text" placeholder="Your company name" />
+        <textarea id="message" placeholder="Your message"></textarea>
+        <div class="checkboxes">
+          <div class="agree-label">
+            <input
+              id="isConsultationChecked"
+              name="consultation"
+              type="checkbox"
+            />
+            <label for="consultation"
+              >I would like to get a free consultation.</label
+            >
+          </div>
+
+          <div class="agree-label">
+            <input
+              id="isPrivacyPolicyChecked"
+              name="consultation"
+              type="checkbox"
+            />
+            <label id="pricayPolicyLabel" for="consultation"
+              >I agree with your
+              <a href="#" class="privacy-policy">privacy policy</a>.</label
+            >
+          </div>
+          <button onclick="submitForm()">
+            Send <img src="./plane.svg" alt="planeIcon" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const nameImput = document.getElementById("name");
+
+    nameImput.addEventListener("change", (event) => {
+      console.log("asdasdasdsa");
+    });
+
+    const sendEmail = () => {
+      console.log("Email is send");
+    };
+
+    const submitForm = () => {
+      const userName = document.getElementById("name").value;
+      const userEmail = document.getElementById("email").value;
+      const userCompany = document.getElementById("company").value;
+      const userMessage = document.getElementById("message").value;
+      const isConsultationChecked = document.getElementById(
+        "isConsultationChecked"
+      ).checked;
+      const isPrivacyPolicyChecked = document.getElementById(
+        "isPrivacyPolicyChecked"
+      ).checked;
+
+      if (
+        isPrivacyPolicyChecked &&
+        userMessage &&
+        (userName || userEmail || userCompany)
+      ) {
+        sendEmail();
+      } else {
+        if (!isPrivacyPolicyChecked) {
+          const privacyLabel = document.getElementById("pricayPolicyLabel");
+          privacyLabel.style.color = "red";
+          alert("Please agree with our policy");
+        }
+        if (!userMessage) {
+          const userMessageComponent = document.getElementById("message");
+          userMessageComponent.style.border = "1px solid red";
+          alert("Please add some text to message");
+        }
+
+        if (!userName && !userEmail && !userCompany) {
+          alert("Please add user name or email or your company");
+        }
+      }
+    };
+
+    const textFill = (value) => {
+      console.log(value);
+    };
+  </script>
+</html>

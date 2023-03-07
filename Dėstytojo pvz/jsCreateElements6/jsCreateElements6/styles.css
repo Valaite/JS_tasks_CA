@@ -1,0 +1,9 @@
+body {
+  margin: 10px;
+}
+
+.child {
+  background-color: red;
+  display: inline-block;
+  margin: 20px;
+}

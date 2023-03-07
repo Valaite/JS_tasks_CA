@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="number1">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        function myFunction(event) {
+            event.preventDefault();
+
+            const randomNumber = Math.floor(Math.random() * 5) + 1;
+            const numberImput = document.getElementById("number1").value;
+
+            if (randomNumber == numberImput) {
+                alert("You won");
+            } else {
+                alert("Try again next time");
+            }
+            console.log(randomNumber);
+        }
+        document.querySelector('form').addEventListener('submit', myFunction);
+
+    </script>
+
+</html>

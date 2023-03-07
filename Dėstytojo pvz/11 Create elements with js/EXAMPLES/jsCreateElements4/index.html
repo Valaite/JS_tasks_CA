@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="child" class="child">
+      <p>www</p>
+    </div>
+    <div id="child" class="child"></div>
+  </body>
+  <script>
+    const input = document.createElement("input");
+    const element = document.querySelectorAll("div");
+    element[0].prepend(input);
+  </script>
+</html>

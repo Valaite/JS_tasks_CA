@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Your Name" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vardas</th>
+                <th>Pavardė</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <script>
+        function Person(name, surname) {
+            this.name = name;
+            this.surname = surname;
+            this.addToTable = function () {
+                const nameColumn = document.createElement('td');
+                nameColumn.textContent = this.name;
+                const surnameColumn = document.createElement('td');
+                surnameColumn.textContent = this.surname;
+                const tr = document.createElement('tr');
+                tr.append(nameColumn, surnameColumn);
+                document.querySelector('tbody').append(tr);
+            };
+        }
+
+        const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+
+
+        document.querySelector("form").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const fullname = document.getElementById('name').value;
+            const [name, surname] = fullname.split(' ').map(namePart => capitalize(namePart.trim()));
+
+            const person = new Person(name, surname);
+            person.addToTable();
+        });
+
+    </script>
+</body>
+
+</html>

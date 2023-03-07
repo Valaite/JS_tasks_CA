@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>bum</button>
+
+    <script>
+        const button = document.querySelector('button');
+        button.style.cssText = 'position:absolute; top:0; left:0';
+
+        let corner = 0;
+        const cornerStyles = ['position:absolute; top:0; right:0;', 'position:absolute; bottom:0; right:0;', 'position:absolute; bottom:0; left:0;', 'position:absolute; top:0; left:0;'];
+        function changePosition(event) {
+            if (corner < cornerStyles.length) {
+                event.target.style.cssText = cornerStyles[corner];
+                corner++;
+            }
+            if (corner === cornerStyles.length) {
+                corner = 0;
+            }
+        }
+
+        button.addEventListener('click', changePosition);
+    </script>
+</body>
+
+</html>

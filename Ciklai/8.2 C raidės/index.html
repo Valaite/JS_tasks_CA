@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="number">
+        <button type="submit">Submit</button>
+        <h1 id="result"></h1>
+    </form>
+
+    <script>
+
+        function myFunction(event){
+            event.preventDefault();
+            const number = document.getElementById("number").value;
+            const resultInput = document.getElementById("result");
+
+let letter = '';
+
+for(let i = 0; i < number -1; i++){
+    letter += 'C';
+}
+
+for(let i = 0; i < number -1; i++){
+    letter += 'C<br>';
+}
+
+for(let i = 0; i < number; i++){
+    letter +='C';
+}
+resultInput.innerHTML = letter;
+
+    }
+    document.querySelector("form"); addEventListener("submit", myFunction);
+    
+
+    </script>
+</body>
